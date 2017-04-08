@@ -150,4 +150,4 @@
 
 ## 已上线 SAE
 
-[点我进入 Suger ～](http://baishu.applinzi.com/blog)
+[点我进入 Suger ～](http://baishu.applinzi.com/blog/#!/home)
