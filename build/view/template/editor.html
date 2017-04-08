@@ -1,0 +1,57 @@
+<div class="editor">
+  <!-- <form method="post" enctype="multipart/form-data" onbutton="return checkForm()"> -->
+  <!-- <input type="hidden" name="detailID" id="detailID" value="<?= $did ?>"> -->
+  <!-- 标题 -->
+  <label for="title" class="d-b">
+      <input type="text" name="title" id="title" ng-model="article.title" class="d-b"/>
+    </label>
+  <!-- 工具栏 -->
+  <div class="tool-bar ta-r">
+    <div class="img-tips f-l p-r ta-c">
+      <i class="icon-picture"></i>
+      <span class="instruction p-a">
+        将图片文件直接拖动到编辑区域即可上传
+        <br />
+        （对于图片名相同的图片，新图片会覆盖旧图片）
+      </span>
+    </div>
+    <div ng-click="save();" class="save-btn p-r d-ib ta-c">
+      <span ng-show="saveMsg" class="save-msg p-a">{{saveMsg}}</span>
+      <i class="icon-save"></i>
+      <span class="instruction p-a">保存</span>
+    </div>
+    <div ng-click="changePublish();" class="change-publish-btn p-r d-ib d-ib ta-c">
+      <i class="{{ article.published === '1' ? 'icon-ok' : 'icon-share-alt'}}"></i>
+      <span>{{ article.published === '1' ? '已发布' : '发布文章'}}</span>
+      <span class="instruction p-a">点击{{ article.published === '1' ? '取消' : '' }}发布</span>
+    </div>
+    <div ui-sref="article({aid:article.aid})" ng-show="article.published === '1'" class="article-page-btn p-r d-ib ta-c">
+      <i class="icon-eye-open"></i>
+      <span class="instruction p-a">文章页</span>
+    </div>
+  </div>
+  <!-- 内容 -->
+  <label for="content" name="content" id="content" class="article-content-editor-wrapper d-b">
+    <textarea app-article-content-editor on-img-drop="uploadImgFile(params);" ng-model="article.content" app-ng-model="article.content" class="article-content-editor d-b"></textarea>
+  </label>
+  <!-- <input app-image-upload on-img-drop="uploadImgFile(params);" type="file" name="imageFile" id="imageFile" /> -->
+  <!-- <input ng-change="uploadImgFile();" type="file" name="imageFile" id="imageFile" accept="image/*" /> -->
+  <!-- ondragover="" -->
+  <!-- 图片上传相关 -->
+  <!-- <fieldset id="img_wrapper">
+      <legend>图片资源</legend>
+      <ul id="img_list">
+        <li>
+          <img src="../images/no-image-available.png" alt="<图片-1>" onclick="simulateFileInput(this)" class="to-be-selected">
+          <input type="file" name="img1" id="img1" onchange="generateThumbnail(this)" style="display:none;" accept="image/*">
+          <input type="text" name="img1_mark" id="img1_mark" value="<图片-1>" disabled="true"><br>
+          <label for="img1_desc">图片描述（请控制在 30 字以内）：
+            <textarea name="img1_desc" id="img1_desc" rows="8" cols="80"></textarea>
+          </label><br>
+          <button type="button" data-img="img1" onclick="deleteImg(this);">删除</button>
+        </li>
+      </ul>
+    </fieldset>
+    <button type="button" name="img_btn" id="img_btn" onclick="addImgInput();">添加图片</button> -->
+  <!-- </form> -->
+</div>

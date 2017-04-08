@@ -1,0 +1,23 @@
+<div class="header">
+  <div ui-sref="home" class="logo d-ib">
+    <img src="public/image/default/logo-suger.png" alt="logo-suger">
+  </div>
+  <!-- <input type="text" class="search"> -->
+  <div ng-click="goToWriter();" class="write-article theme-btn f-r">
+    <i class="icon-pencil"></i> <span>写文章</span>
+  </div>
+  <div ng-if="userInfo" class="user d-ib f-r p-r">
+    <div ui-sref="user({uid:userInfo.uid})" class="avatar-wrapper">
+      <img ng-src="{{userInfo.avatar}}" alt="{{userInfo.username}}'s avatar" class="avatar">
+    </div>
+    <ul class="user-menu p-a o-h">
+      <li class="f-l"><a ui-sref="user({uid:userInfo.uid})" class="f-l"><i class="icon-home"></i> 我的主页</a></li>
+      <!-- <li class="f-l"><a class="f-l"><i class="icon-cog"></i> 设置</a></li> -->
+      <li class="f-l"><a ng-click="logout();" class="f-l"><i class="icon-signout"></i> 退出</a></li>
+    </ul>
+  </div>
+  <div ng-if="!userInfo" class="sign-btn f-r">
+    <a ui-sref="signin" class="signin-btn">登录</a>
+    <a ui-sref="signup" class="signup-btn">注册</a>
+  </div>
+</div>

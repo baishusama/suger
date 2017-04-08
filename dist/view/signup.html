@@ -1,0 +1,36 @@
+<!-- <span class="{{submitInfo.theme}} {{submitInfo.opacity}}" app-submit-info ng-show="submitInfo.info">
+  {{ submitInfo.info }}
+</span> -->
+<div class="sign-wrapper">
+  <div class="sign-tab">
+    <span ui-sref="signin" class="tab">登录</span>
+    <span class="split">·</span>
+    <span ui-sref="signup" class="tab active">注册</span>
+  </div>
+  <form name="signupform" method="post" onsubmit="">
+    <div class="input-wrapper">
+      <label for="username">
+        <i class="icon-user"></i>
+        <input ng-blur="check($event);" ng-model="signUpInfo.username" type="text" name="username" id="username" value="" placeholder="用户名">
+        <span app-warning-info info="warningInfo.username" ng-show="warningInfo.username"></span>
+      </label>
+      <label for="email">
+        <i class="icon-envelope"></i>
+        <input ng-blur="check($event);" ng-model="signUpInfo.email" type="email" name="email" id="email" value="" placeholder="绑定邮箱">
+        <span app-warning-info info="warningInfo.email" ng-show="warningInfo.email"></span>
+      </label>
+      <label for="password" ng-mouseover="showEyeIcon = true;" ng-mouseout="showEyeIcon = false;" class="p-r">
+        <i class="icon-key"></i>
+        <input ng-blur="check($event);" ng-model="signUpInfo.password" type="{{pwdInputType}}" name="password" id="password" value="" placeholder="设置密码">
+        <i ng-show="showEyeIcon" ng-mousedown="changePwdInputType();" ng-mouseup="changePwdInputType();" class="eye-icon {{iconEyeWhich}} p-a"></i>
+        <span app-warning-info info="warningInfo.password" ng-show="warningInfo.password"></span>
+      </label>
+      <label for="repeatpwd">
+        <i class="icon-check"></i>
+        <input ng-blur="check($event);" ng-model="signUpInfo.repeatpwd" type="password" name="repeatpwd" id="repeatpwd" value="" placeholder="重复密码">
+        <span app-warning-info info="warningInfo.repeatpwd" ng-show="warningInfo.repeatpwd"></span>
+      </label>
+    </div>
+    <button ng-click="signUserUp();" type="button" name="button">注册</button>
+  </form>
+</div>

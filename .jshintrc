@@ -1,0 +1,8 @@
+{
+    "globals": {
+        "$": false,
+	"angular": false,
+        "console": false,
+	"$timeout": false
+    }
+}

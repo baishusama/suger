@@ -1,0 +1,28 @@
+span[app-submit-info] {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  z-index: 9;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid;
+  border-radius: @border-radius;
+  padding: 10px 20px;
+  width: 300px;
+  background-color: @white;
+  font-size: 12px;
+  text-align: center;
+  box-shadow: @form-wrapper-shadow;
+  transform: translateX(-50%) ;
+  transition: opacity 1s ease-in-out; // delay 交给 js(ShowInfoService.popup) 了，否则没有 transition 效果
+  &.warn {
+    border-color: @theme-color;
+    color: @theme-color;
+    // background-color: lighten(@theme-color, 40%);
+  }
+  &.default {
+    border-color: @theme-black-lignten-40;
+    color: @theme-black-lignten-40;
+    // background-color: lighten(@theme-color-lignten-10, 40%);
+  }
+}

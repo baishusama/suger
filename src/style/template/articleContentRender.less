@@ -1,0 +1,106 @@
+.article-content-render {
+  color: @theme-black;
+  font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  a {
+    display: inline-block;
+    border-bottom: 1px solid @theme-black;
+    color: @theme-black;
+    // text-decoration: underline;
+    &:hover {
+      color: @theme-color;
+      border-bottom-color: @theme-color;
+    }
+  }
+  code {
+    margin: 0 3px;
+    border-radius: @border-radius;
+    padding: 3px 6px;
+    background-color: @theme-black-lignten-70;
+  }
+  blockquote {
+    position: relative;
+    margin: 10px 10px 20px;
+    // border-left: 2px solid @theme-black-lignten-10;
+    border-top: 1px solid @theme-color-lignten-10;
+    border-right: 1px solid @theme-color-lignten-10;
+    border-bottom: 1px solid @theme-black-lignten-10;
+    border-left: 1px solid @theme-black-lignten-10;
+    padding: 30px;
+    &::before,&::after {
+      position: absolute;
+      display: block;
+      padding: 3px;
+      background-color: @white;
+      color: @theme-black-lignten-16;
+      // color: @theme-black-lignten-70;
+      font-size: 40px;
+      font-family: FontAwesome;
+    }
+    &::before {
+      top: -10px;
+      left: -10px;
+      content: '\f10d';
+    }
+    &::after {
+      right: -10px;
+      bottom: -10px;
+      content: '\f10e';
+    }
+    p {
+      margin: 0;
+    }
+  }
+  p {
+    margin: 30px 0;
+    line-height: 26px;
+  }
+  .image-wrapper {
+    margin: 40px 0;
+    text-align: center;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    .image-caption {
+      display: inline-block;
+      margin: 0 auto;
+      border-bottom: 1px solid @theme-black-lignten-64;
+      padding: 20px;
+      max-width: 80%;
+      color: @theme-black-lignten-40;
+      // text-align: center;
+    }
+  }
+  ul,ol {
+    padding-left: 2em;
+    li {
+      margin: 10px 0;
+    }
+  }
+  ul {
+    li {
+      &.hierarchy-0 {
+        list-style: disc;
+      }
+      &.hierarchy-1 {
+        list-style: circle;
+      }
+      &.hierarchy-2 {
+        list-style: square;
+      }
+    }
+  }
+  ol {
+    li {
+      &.hierarchy-0 {
+        list-style: decimal;
+      }
+      &.hierarchy-1 {
+        list-style: upper-roman;
+      }
+      &.hierarchy-2 {
+        list-style: lower-roman;
+      }
+    }
+  }
+}

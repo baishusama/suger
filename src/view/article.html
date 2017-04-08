@@ -1,0 +1,17 @@
+<div app-header class="header-wrapper"></div>
+<div class="article-page-main-wrapper main-wrapper">
+  <div class="article-page-main">
+    <h1 class="title">{{ articleInfo.title }}</h1>
+    <div class="author-info">
+      <img ui-sref="user({uid:authorInfo.uid})" ng-src="{{ authorInfo.avatar }}" alt="author's avatar" class="c-p">
+      <div class="info">
+        <span class="role">{{ authorInfo.role === '0' ? '站长' : '作者'}}</span>
+        <span ui-sref="user({uid:authorInfo.uid})" class="author c-p">{{ authorInfo.username }}</span>
+        <span class="posttime">{{ articleInfo.publishtime }}</span>
+      </div>
+      <span ng-if="userInfo.uid === authorInfo.uid" ui-sref="writer.book.article({bid:articleInfo.frombook,aid:articleInfo.aid})" class="edit-btn">编辑文章</span>
+    </div>
+    <div app-article-content-render app-ng-model="articleInfo.content" class="article-content-render"></div>
+  </div>
+  <footer app-footer></footer>
+</div>

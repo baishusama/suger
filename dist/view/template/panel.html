@@ -1,0 +1,36 @@
+<!-- <div class="panel p-f ta-c"> -->
+<div ui-sref="home" class="back-to-home theme-btn d-ib">
+  <i class="icon-home"></i> <span>回首页</span>
+</div>
+<div class="add-book f-l">
+  <a ng-click="toggleAddBookForm();" class="f-l" href=""><i class="icon-plus"></i>新建文集</a>
+  <form ng-show="showAddBookForm" class="cl-l" action="" method="">
+    <input type="text" ng-model="bookTitle" class="d-b">
+    <div class="book-btns">
+      <button ng-click="submitAddBookForm();" type="button" class="submit">提交</button>
+      <button ng-click="cancelAddBookForm();" type="button" class="cancel">取消</button>
+    </div>
+  </form>
+</div>
+
+<ul class="o-h ta-l cl-l">
+  <!-- <li class="active f-l p-r"><a class="f-l" href=""><i class="icon-pencil"></i>新建</a></li> -->
+  <li ng-click="active(book.bid);" class="{{book.bid === curBook?'active':''}} f-l p-r" ng-repeat="book in books">
+    <a ui-sref="writer.book({bid:book.bid})" class="f-l">
+      <!-- ng-href="#!/writer/book/{{book.bid}}" -->
+      <i class="icon-book"></i>{{book.title}}
+    </a>
+  </li>
+  <!-- <li class="f-l p-r"><a class="f-l" href=""><i class="icon-file"></i>已发布</a></li> -->
+  <!-- <li class="f-l p-r"><a class="f-l" href=""><i class="icon-file-alt"></i>草稿箱</a></li> -->
+  <li class="f-l p-r">
+    <a ui-sref="writer.draft" class="f-l">
+      <i class="icon-trash"></i>废纸箱
+    </a>
+  </li>
+  <!-- <li class="f-l p-r"><a class="f-l" href=""><i class="icon-cogs"></i>管理</a></li> -->
+</ul>·
+<!-- <div class="article-manager d-ib">
+    <i class="icon-cogs"></i> <span>批量管理</span>
+  </div> -->
+<!-- </div> -->

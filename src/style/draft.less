@@ -1,0 +1,53 @@
+.draftEditor {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  @pdl: 100px;
+  .title {
+    padding: 20px @pdl;
+    width: 100%;
+    background-color: @theme-black-lignten-50;
+    font-size: 24px;
+  }
+  .content {
+    @bigNumber: 3000px;
+    margin-bottom: -@bigNumber;
+    padding: 10px @pdl;
+    padding-bottom: @bigNumber;
+
+  }
+  .draft-btn-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 57px;
+    text-align: center;
+    .draft-btns {
+      display: inline-block;
+      border-top: 1px solid @theme-black-lignten-40;
+      padding: 8px 40px;
+      // font-size: 0;
+    }
+    button {
+      margin-right: 20px;
+      border: 0;
+      border-radius: 2px;
+      padding: 0;
+      width: 160px;
+      background-color: @white;
+      color: @theme-black;
+      font-size: 16px;
+      line-height: 40px;
+    }
+    .recover-btn {
+      background-color: @theme-black-lignten-16;
+      color: @white;
+    }
+    .delete-btn {
+      margin: 0;
+      background-color: @theme-pink;
+      color: @white;
+    }
+  }
+}

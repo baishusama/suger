@@ -1,0 +1,46 @@
+span[app-warning-info] {
+  position: absolute;
+  // top: 0;
+  left: 105%;
+  display: inline-block;
+  border: 1px solid @theme-color;
+  border-radius: @border-radius;
+  padding: 10px 14px;
+  background-color: @form-warning-bgc;
+  font-size: 14px;
+  white-space: nowrap;
+  // webkit 不支持 drop-shadow 的第四个参数。。
+  // filter: drop-shadow(0 0 2px @theme-color);
+  &::before {
+    @size: 8px;
+    position: absolute;
+    top: 50%;
+    left: -@size;
+    display: block;
+    content: '\200b';
+    border-right: @size solid @theme-color;
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    width: 0;
+    height: 0;
+    transform: translateY(-@size);
+  }
+  &::after {
+    @size: 6px;
+    position: absolute;
+    top: 50%;
+    left: -@size;
+    display: block;
+    content: '\200b';
+    border-right: @size solid @white;
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    width: 0;
+    height: 0;
+    transform: translateY(-@size);
+  }
+  i {
+    color: @theme-color;
+    font-size: 16px;
+  }
+}

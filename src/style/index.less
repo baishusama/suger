@@ -1,0 +1,93 @@
+@import "variable.less";
+@import "property.less";
+@import "signup.less";
+@import "template/warningInfo.less";
+@import "template/submitInfo.less";
+@import "template/header.less";
+@import "template/footer.less";
+@import "writer.less";
+@import "template/panel.less";
+@import "template/articlePanel.less";
+@import "template/editor.less";
+@import "article.less";
+@import "template/articleContentRender.less";
+@import "verify.less";
+@import "404.less";
+@import "template/articleList.less";
+@import "user.less";
+@import "draft.less";
+
+html,body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: @body-bgc;
+}
+
+ul,ol {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+input, textarea, button {
+  outline-width: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+div.main-view {
+  // 创建 BFC 使 pos:a 的登录／注册框的 mgt 被包住
+  // overflow: auto; // 会产生“下方的 box-shadow 被遮盖”的副作用
+  // 利用 pdt 使“外边距重叠”失效
+  // padding-top: 1px;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 60px 0;
+  footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.theme-btn {
+  box-sizing: border-box;
+  border: 1px solid @theme-percent-6;
+  border-radius: @border-radius;
+  padding: 10px;
+  background-color: @theme-transparent;
+  color: @white;
+  font-size: 0;
+  cursor: pointer;
+  transition: all @transition-time linear;
+  &:hover {
+    border-radius: 0;
+    border-color: @theme-color;
+    background-color: @theme-color;
+    i {
+      color: @white;
+    }
+  }
+  i {
+    margin-right: 6px;
+    color: @theme-color;
+    font-size: 16px;
+    transition: color @transition-time linear;
+  }
+  span {
+    font-size: 14px;
+  }
+}
+
+.no-article {
+  color: @theme-black-lignten-50;
+}

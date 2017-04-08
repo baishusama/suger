@@ -1,0 +1,37 @@
+<div app-header class="header-wrapper"></div>
+<div class="user-page-main-wrapper main-wrapper">
+  <div class="content-wrapper">
+    <div class="user-page-author">
+      <img ng-src="{{userInfo.avatar}}" alt="author {{userInfo.username}}'s avatar">
+      <span class="author-name">{{userInfo.username}}</span>
+      <ul class="statistics">
+        <li>写有 {{articles.length}} 篇文章</li>
+      </ul>
+    </div>
+    <ul class="user-page-tab">
+      <li class="active"><i class="icon-file"></i> 文章</li>
+    </ul>
+    <ul class="article-list">
+      <li ng-if="articles.length === 0" class="no-article">
+        该用户暂时还没有发布任何文章哦～
+      </li>
+      <li ng-repeat="article in articles">
+        <div class="first-line">
+          <div class="author-info">
+            <img ng-src="{{userInfo.avatar}}" alt="author {{userInfo.username}}'s avatar">
+            <span class="author">{{ userInfo.username }}</span>
+          </div>
+          <span class="publishtime">{{ article.publishtime }}</span>
+        </div>
+        <div class="article-info" ui-sref="article({aid:article.aid})">
+          <img ng-if="article.cover !== ''" ng-src="{{ article.cover }}" alt="{{article.title}} 's cover image' " class="article-cover f-r ">
+          <h3 class="article-title ">{{ article.title }}</h3>
+          <p class="article-content-text ">{{ article.contentText }}</p>
+
+        </div>
+        <!-- todo..浏览量等其他信息 -->
+      </li>
+    </ul>
+  </div>
+  <footer app-footer></footer>
+</div>

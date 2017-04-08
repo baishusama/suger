@@ -1,0 +1,100 @@
+.sign-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  // margin-top: 50vh;
+  // margin-top: 100px;
+  border-radius: @border-radius;
+  padding: 50px;
+  // padding-bottom: 30px;
+  width: 400px;
+  background-color: @white;
+  transform: translate(-50%,-50%);
+  box-shadow: @form-wrapper-shadow;
+  .sign-tab {
+    @pdtb: 8px;
+    margin-bottom: 50px;
+    text-align: center;
+    span {
+      display: inline-block;
+      &.tab {
+        border-bottom: 2px solid transparent;
+        padding: @pdtb 10px;
+        color: @form-dark-gray;
+        &:hover {
+          border-color: @theme-color;
+        }
+        &.active {
+          // position: relative;
+          border-color: @theme-color;
+          color: @theme-color;
+        }
+      }
+      &.split {
+        padding: @pdtb;
+        color: @form-dark-gray;
+      }
+    }
+  }
+  form {
+    .input-wrapper {
+      margin-bottom: 20px;
+      border: 1px solid @form-line-clr;
+      border-radius: @border-radius;
+      background-color: @white;
+      label {
+        @icon-width: 0.15;
+        @line-height: 50px;
+        position: relative;
+        display: block;
+        border-bottom: 1px solid @form-line-clr;
+        background-color: @body-bgc;
+        font-size: 0;
+        &:first-of-type {
+          border-radius: @border-radius @border-radius 0 0;
+        }
+        &:last-of-type {
+          border-bottom: 0;
+          border-radius: 0 0 @border-radius @border-radius;
+        }
+        & > i {
+          display: inline-block;
+          width: percentage(@icon-width);
+          color: @form-dark-gray;
+          font-size: 16px;
+          text-align: center;
+        }
+        input {
+          // display: block;
+          box-sizing: border-box;
+          border: 0;
+          width: percentage(1 - @icon-width);
+          height: @line-height;
+          line-height: @line-height;
+          background-color: transparent;
+          font-size: 14px;
+          outline: 0;
+          .placeholder(@form-line-clr);
+        }
+        .eye-icon {
+          right: 0;
+          line-height: @line-height;
+        }
+      }
+    }
+    button {
+      border: 0;
+      border-radius: @border-radius;
+      padding: 0;
+      width: 100%;
+      height: 48px;
+      background-color: @btn-bgc;
+      color: @white;
+      font-size: 15px;
+      line-height: 48px;
+      outline: 0;
+    }
+  }
+}

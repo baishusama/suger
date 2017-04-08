@@ -1,0 +1,32 @@
+<!-- <div class="article-panel"> -->
+<div ng-if="type !== 'draft'" class="add-article">
+  <a ng-click="addNewArticle();" href="">
+    <i class="icon-plus-sign"></i> 新建文章
+  </a>
+</div>
+<div ng-if="type === 'draft'" class="draft-statistics">
+  <i class="icon-trash"></i> 回收站({{articles.length}})
+  <i ui-sref="writer" class="icon-remove close"></i>
+</div>
+<ul>
+  <!-- ng-if="xxx" 放到后端 sql 的 select 条件里了 -->
+  <li ng-repeat="article in articles" ng-click="active(article.aid);" class="{{article.aid === curArticle?'active':''}}">
+    <a ng-click="goToArticle(article.aid);">
+      <!-- ng-href="#!/writer/book/{{book.bid}}/article/{{article.aid}}" -->
+      <i class="{{ article.published === '1' ? 'icon-file' : 'icon-file-alt'}} "></i>
+      <div class="article-overview">
+        <span class="title">{{article.title}}</span>
+        <span class="content">{{article.content}}</span>
+      </div>
+      <div ng-if="type !== 'draft'" ng-show="article.aid === curArticle" class="article-memu">
+        <i class="icon-cog" ng-click="toggleMenu();"></i>
+        <ul ng-show="showMenu">
+          <li>
+            <span ng-click="abandonArticle(article.aid);"><i class="icon-trash"></i>删除文章</span>
+          </li>
+        </ul>
+      </div>
+    </a>
+  </li>
+</ul>
+<!-- </div> -->

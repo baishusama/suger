@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Suger - BaiShu's Blog</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./public/css/index.css">
+</head>
+
+<body>
+  <span class="{{submitInfo.theme}} {{submitInfo.opacity}}" app-submit-info ng-show="submitInfo.info">
+    {{ submitInfo.info }}
+  </span>
+  <div ui-view class="main-view p-r">
+  </div>
+  <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script>
+  <script src="vendor/angular-cookies/angular-cookies.min.js" charset="utf-8"></script>
+  <script src="vendor/angular-validation/dist/angular-validation.min.js" charset="utf-8"></script>
+  <!-- <script src="vendor/angular-animate/angular-animate.min.js" charset="utf-8"></script> -->
+  <script src="js/index.js" charset="utf-8"></script>
+</body>
+
+</html>

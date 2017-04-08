@@ -1,0 +1,30 @@
+<!-- <span class="{{submitInfo.theme}} {{submitInfo.opacity}}" app-submit-info ng-show="submitInfo.info">
+  {{ submitInfo.info }}
+</span> -->
+<div app-header class="header-wrapper"></div>
+<div class="home-page-main-wrapper main-wrapper">
+  <div class="content-wrapper">
+    <ul class="article-list">
+      <li ng-if="articles.length === 0" class="no-article">
+        这里暂时还没有文章哦 =。=
+      </li>
+      <li ng-repeat="article in articles">
+        <div class="first-line">
+          <div ui-sref="user({uid:article.uid})" class="author-info c-p">
+            <img ng-src="{{article.avatar}}" alt="author {{article.author}}'s avatar">
+            <span class="author">{{ article.author }}</span>
+          </div>
+          <span class="publishtime">{{ article.publishtime }}</span>
+        </div>
+        <div class="article-info" ui-sref="article({aid:article.aid})">
+          <img ng-if="article.cover !== ''" ng-src="{{ article.cover }}" alt="{{article.title}} 's cover image' " class="article-cover f-r ">
+          <h3 class="article-title ">{{ article.title }}</h3>
+          <p class="article-content-text ">{{ article.contentText }}</p>
+
+        </div>
+        <!-- todo..浏览量等其他信息 -->
+      </li>
+    </ul>
+  </div>
+  <footer app-footer></footer>
+</div>

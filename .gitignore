@@ -1,0 +1,11 @@
+# Depencies
+node_modules/
+bower_components/
+
+# Mail @php
+mail.php
+class.phpmailer.php
+class.smtp.php
+
+# Data @sql
+data/sql/suger-*.sql

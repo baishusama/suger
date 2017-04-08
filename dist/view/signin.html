@@ -1,0 +1,26 @@
+<!-- <span class="{{submitInfo.theme}} {{submitInfo.opacity}}" app-submit-info ng-show="submitInfo.info">
+  {{ submitInfo.info }}
+</span> -->
+<!-- <span class="submit-info-wrapper p-a d-ib" app-submit-info info="submitInfo.info" theme="submitInfo.theme"></span> -->
+<!-- <div class="submit-info-wrapper p-a" app-submit-info info="submitInfo.info" theme="submitInfo.theme"></div> -->
+<div class="sign-wrapper">
+  <div class="sign-tab">
+    <span ui-sref="signin" class="tab active">登录</span>
+    <span class="split">·</span>
+    <span ui-sref="signup" class="tab">注册</span>
+  </div>
+  <form name="signinform" method="post" onsubmit="">
+    <div class="input-wrapper">
+      <label for="account">
+        <i class="icon-user"></i>
+        <input ng-model="signInInfo.account" type="text" name="account" id="account" value="" placeholder="你的用户名">
+      </label>
+      <label for="password" ng-mouseover="showEyeIcon = true;" ng-mouseout="showEyeIcon = false;" class="p-r">
+        <i class="icon-key"></i>
+        <input ng-model="signInInfo.password" type="{{pwdInputType}}" name="password" id="password" value="" placeholder="设置密码">
+        <i ng-show="showEyeIcon" ng-mousedown="changePwdInputType();" ng-mouseup="changePwdInputType();" class="eye-icon {{iconEyeWhich}} p-a"></i>
+      </label>
+    </div>
+    <button ng-click="signUserIn();" type="button" name="button">登录</button>
+  </form>
+</div>

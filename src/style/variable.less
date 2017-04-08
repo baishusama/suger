@@ -1,0 +1,57 @@
+@theme-color: rgb(226,50,55);
+@theme-color-lignten-10: lighten(rgb(226,50,55), 10%);
+@theme-color-darken-20: darken(rgb(226,50,55), 20%);
+@theme-percent-3: rgba(226,50,55,.3);
+@theme-percent-6: rgba(226,50,55,.6);
+@theme-transparent: rgba(226,50,55,0);
+@theme-pink: rgb(255,88,88);
+@theme-black: rgb(38,50,55);
+@theme-black-lignten-5: lighten(rgb(38,50,55), 5%);
+@theme-black-lignten-10: lighten(rgb(38,50,55), 10%);
+@theme-black-lignten-16: lighten(rgb(38,50,55), 16%);
+@theme-black-lignten-40: lighten(rgb(38,50,55), 40%);
+@theme-black-lignten-50: lighten(rgb(38,50,55), 50%);
+@theme-black-lignten-64: lighten(rgb(38,50,55), 64%);
+@theme-black-lignten-70: lighten(rgb(38,50,55), 70%);
+@theme-black-lignten-76: lighten(rgb(38,50,55), 76%);
+@theme-black-percent-9: rgba(38,50,55,.9);
+@theme-black-percent-8: rgba(38,50,55,.8);
+@form-line-clr: #c8c8c8;
+@form-dark-gray: #969696;
+@form-wrapper-shadow: 0 0 6px rgba(0,0,0,.3);
+@form-warning-bgc: rgba(255,255,255,.9);
+@border-radius: 4px;
+@white: #fff;
+@transition-time: .2s;
+@article-panel-at-clr: rgba(255,255,255,.8);
+@article-panel-ac-clr: rgba(255,255,255,.4);
+// @theme
+@body-bgc: @theme-black-lignten-76;// #f1f1f1;
+@btn-bgc: @theme-pink;
+@article-bgc: @theme-black-lignten-16;
+@panel-width: 14%;
+@article-panel-width: 28%;
+
+.placeholder(@color){
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: @color;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: @color;
+  }
+  &:-ms-input-placeholde r { /* IE 10+ */
+    color: @color;
+  }
+}
+
+// 为了避免 less 直接编译了 calc 的表达式参数，而使用逃逸字符串
+.calc(@property; @expStr){
+  /* Firefox */
+  @{property}: -moz-calc(~'@{expStr}');
+  /* WebKit */
+  @{property}: -webkit-calc(~'@{expStr}');
+  /* Opera */
+  @{property}: -o-calc(~'@{expStr}');
+  /* Standard */
+  @{property}: calc(~'@{expStr}');
+}

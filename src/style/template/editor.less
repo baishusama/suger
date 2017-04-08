@@ -1,0 +1,127 @@
+.article-content {
+  position: relative;
+}
+.editor {
+  @titleH: 60px;
+  @toolBarH: 30px;
+  @pdt: 10px;
+  @pd: @pdt 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  input {
+    box-sizing: border-box;
+    border: 0;
+    padding: @pd;
+    width: 100%;
+    height: @titleH;
+    line-height: -@pdt*2+@titleH;
+    font-size: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    outline: 0;
+  }
+  .tool-bar {
+    padding: 0 10px;
+    height: @toolBarH;
+    & > div {
+      padding: 4px 6px;
+      cursor: pointer;
+      &:hover {
+        background-color: @theme-black-lignten-64;
+        .instruction {
+          // display: block;
+          visibility: visible;
+        }
+      }
+      & > span {
+        font-size: 14px;
+      }
+      .instruction {
+        @bgc: @theme-black-percent-8;
+        // display: none;
+        visibility: hidden;
+        bottom: 40px;
+        left: 50%;
+        border-radius: @border-radius;
+        padding: 6px 8px;
+        background-color: @bgc;
+        color: @white;
+        font-size: 12px;
+        white-space: nowrap;
+        transform: translateX(-50%);
+        &::after {
+          @size: 6px;
+          position: absolute;
+          left: 50%;
+          bottom: -@size;
+          display: block;
+          content: '\200b';
+          margin-left: -@size;
+          border-top: @size solid @bgc;
+          border-left: @size solid transparent;
+          border-right: @size solid transparent;
+          width: 0;
+          height: 0;
+        }
+      }
+      &.img-tips {
+        .instruction {
+          left: 0;
+          transform: translateX(0);
+          &::after {
+            // @size: 6px;
+            // @img-icon-width: 30px;
+            // 30px / 2 - 6px
+            left: 9px;
+            margin-left: 0;
+          }
+        }
+      }
+      &.save-btn {
+        box-sizing: border-box;
+        width: 30px;
+        padding: 4px 0;
+        .save-msg {
+          top: 5px;
+          left: 0;
+          white-space: nowrap;
+          transform: translateX(-100%);
+        }
+      }
+      &.article-page-btn {
+        .instruction {
+          left: auto;
+          right: 0;
+          transform: translateX(0);
+          &::after {
+            // @size: 6px;
+            // @img-icon-width: 30px;
+            // 30px / 2 - 6px
+            left: auto;
+            right: 9px;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+  label[for="content"] {
+    // height: calc(100% - 90px);
+    // @topHalfH: @titleH + @toolBarH;
+    .calc(height, "100% - 90px");
+    textarea {
+      box-sizing: border-box;
+      border: 0;
+      padding: @pd;
+      width: 100%;
+      height: 100%;
+      line-height: 30px;
+      font-size: 18px;
+      resize: none;
+      outline: 0;
+    }
+  }
+}
