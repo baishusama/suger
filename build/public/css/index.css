@@ -43,6 +43,17 @@
 .c-p {
   cursor: pointer;
 }
+.sign-page-logo {
+  position: fixed;
+  left: 40px;
+  top: 120px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+}
+.sign-page-logo img {
+  width: 100%;
+}
 .sign-wrapper {
   position: absolute;
   top: 50%;
