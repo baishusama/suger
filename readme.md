@@ -16,9 +16,9 @@
 
 ### 项目的雏形
 
-雏形一：一个仿百度新闻的 PHP 为主的传统。
-雏形二：PHP 搭建自己的 MVC。
-雏形三：一个使用 NG 仿拉勾的移动端 WebApp
+1. 雏形一：一个仿百度新闻的 PHP 为主的传统。
+2. 雏形二：PHP 搭建自己的 MVC。
+3. 雏形三：一个使用 NG 仿拉勾的移动端 WebApp
 
 > 没错，上面三个项目都坑了。
 
@@ -150,4 +150,4 @@
 
 ## 已上线 SAE
 
-[点我进入 Suger ～](baishu.applinzi.com/blog)
+[点我进入 Suger ～](http://baishu.applinzi.com/blog)
